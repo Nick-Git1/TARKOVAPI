@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'Draftwerk';
+    src: url('/fonts/Draftwerk.woff2') format('woff2'),
+         url('/fonts/Draftwerk.woff') format('woff'),
+         url('/fonts/Draftwerk.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.landing-page {
+    font-family: 'Draftwerk', sans-serif;
+    background: linear-gradient(to bottom, rgba(65, 66, 64, 0.8), rgba(119, 106, 83, 0.8)), url('KnightBanner.jpeg') no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: 'Draftwerk', sans-serif;
+    background: linear-gradient(to bottom, rgb(65, 66, 64), rgb(119, 106, 83));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.content {
+    flex: 1;
+}
+
+#header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #212121;
+    height: 12vh;
+    width: 100%;
+    margin: 0;
+    padding: 7px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#header a, #header ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: right;
+    justify-content: flex-end;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    align-items: right;
+    justify-content: flex-end;
+}
+
+.header-item {
+    margin-right: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.header-item a:hover {
+    text-decoration: underline;
+}
+
+.header-item:last-child {
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header-item:last-child {
+    margin-right: 0;
+}
+
+a {
+    color: #837457;
+    text-decoration: none;
+    font-size: 35px;
+}
+
+
+.login-signup a{
+    display: flex;
+}
+
+.login-signup a:hover {
+    text-decoration: underline;
+}
+
+.site-logo a{
+    display: flex;
+    font-size: 80px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: #212121;
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 7px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: auto;
+}
+
+.landing-page-banner {
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.904);
+    margin: 0;
+    padding: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    z-index: 2;
+    border-radius: 20px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.landing-page-banner-text a{
+    font-size: 100px;
+    color: #837457;
+    cursor: default;
+}
+
+.landing-page-content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.904);
+    margin: 0;
+    padding: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    z-index: 2;
+    border-radius: 20px;
+    text-align: center;
+    cursor: default;
+}
+
