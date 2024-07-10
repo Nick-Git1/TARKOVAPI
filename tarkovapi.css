@@ -14,7 +14,7 @@
 
 body.landing-page {
     font-family: 'Draftwerk', sans-serif;
-    background: linear-gradient(to bottom, rgba(65, 66, 64, 0.8), rgba(119, 106, 83, 0.8)), url('KnightBanner.jpeg') no-repeat center center fixed;
+    background: linear-gradient(to bottom, rgba(65, 66, 64, 0.8), rgba(119, 106, 83, 0.8));
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
@@ -25,7 +25,7 @@ body.landing-page {
 
 body {
     font-family: 'Draftwerk', sans-serif;
-    background: linear-gradient(to bottom, rgb(65, 66, 64), rgb(119, 106, 83));
+    background: linear-gradient(to bottom, rgba(65, 66, 64, 0.8), rgba(119, 106, 83, 0.8));
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
@@ -165,4 +165,3 @@ a {
     text-align: center;
     cursor: default;
 }
-
