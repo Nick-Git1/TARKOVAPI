@@ -1,11 +1,10 @@
 @font-face {
     font-family: 'Draftwerk';
-    src: url('/fonts/Draftwerk.woff2') format('woff2'),
-         url('/fonts/Draftwerk.woff') format('woff'),
-         url('/fonts/Draftwerk.ttf') format('truetype');
+    src: url('fonts/Draftwerk Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
+
 * {
     margin: 0;
     padding: 0;
