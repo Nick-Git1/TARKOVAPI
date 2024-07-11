@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const conceptArtImages = [
-        'images/KnightBanner.jpeg',
-        'images/BigPipeBanner.jpeg',
-        'images/BirdeyeBanner.jpeg',
-        'images/Shturman.jpeg',
-        'images/TagillaConceptArt.jpeg',
-        'images/Killa.jpeg',
-        'images/LightkeeperArt.jpeg',
+        '/images/KnightBanner.jpeg',
+        '/images/BigPipeBanner.jpeg',
+        '/images/BirdeyeBanner.jpeg',
+        '/images/Shturman.jpeg',
+        '/images/TagillaConceptArt.jpeg',
+        '/images/Killa.jpeg',
+        '/images/LightkeeperArt.jpeg'
     ];
 
     const randomImage = conceptArtImages[Math.floor(Math.random() * conceptArtImages.length)];
@@ -16,3 +16,4 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.backgroundRepeat = 'no-repeat';
     document.body.style.backgroundPosition = 'center top';
 });
+

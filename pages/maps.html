@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/tarkovapi.css" rel="stylesheet">
+    <script src="/tarkovapi.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TARKOV API - Escape From Tarkov Stats and Data</title>
+</head>
+<body>
+    <nav id="header">
+        <div class="site-logo"><a href="/tarkovapi.html">TARKOVAPI</a></div>
+        <ul>
+            <li class="header-item" id="tasks-btn"><a href="tasks.html">TASKS</a></li>
+            <li class="header-item" id="items-btn"><a href="items.html">ITEMS</a></li>
+            <li class="header-item" id="flea-market-btn"><a href="fleamarket.html">FLEA MARKET</a></li>
+            <li class="header-item" id="traders-btn"><a href="traders.html">TRADERS</a></li>
+            <li class="header-item" id="maps-btn"><a href="maps.html">MAPS</a></li>
+        </ul>
+        <div class="login-signup"><a href="login.html">LOGIN / SIGNUP</a></div>
+    </nav>
+    <div class="maps-grid">
+        <div class="map-preview" data-full="/images/factory.png" onclick="openInNewTab(this.getAttribute('data-full'))">
+            <img src="/images/factory-preview.png" alt="Factory">
+            <div class="map-preview-text">FACTORY</div>
+        </div>
+        <div class="map-preview">
+            <a href="/images/customs.png" onclick="openInNewTab('/images/customs.png')">
+                <img src="/images/customs-preview.png" alt="Customs">
+                <div class="map-preview-text">CUSTOMS</div>
+            </a>
+        </div>
+        <div class="map-preview">
+            <a href="/images/woods.png" onclick="openInNewTab('/images/woods.png')">
+                <img src="/images/woods-preview.png" alt="Woods">
+                <div class="map-preview-text">WOODS</div>
+            </a>
+        </div>
+        <div class="map-preview">
+            <a href="/images/interchange.png" onclick="openInNewTab('/images/interchange.png')">
+                <img src="/images/interchange-preview.png" alt="Interchange">
+                <div class="map-preview-text">INTERCHANGE</div>
+            </a>
+        </div>
+        <div class="map-preview">
+            <a href="/images/shoreline.png" onclick="openInNewTab('/images/shoreline.png')">
+                <img src="/images/shoreline-preview.png" alt="Shoreline">
+                <div class="map-preview-text">SHORELINE</div>
+            </a>
+        </div>
+        <div class="map-preview">
+            <a href="/images/reserve.png" onclick="openInNewTab('/images/reserve.png')">
+                <img src="/images/reserve-preview.png" alt="Reserve">
+                <div class="map-preview-text">RESERVE</div>
+            </a>
+        </div>
+        <div class="map-preview">
+            <a href="/images/labs.png" onclick="openInNewTab('/images/labs.png')">
+                <img src="/images/labs-preview.png" alt="The Lab">
+                <div class="map-preview-text">THE LAB</div>
+            </a>
+        </div>
+        <div class="map-preview">
+            <a href="/images/lighthouse.png" onclick="openInNewTab('/images/lighthouse.png')">
+                <img src="/images/lighthouse-preview.png" alt="Lighthouse">
+                <div class="map-preview-text">LIGHTHOUSE</div>
+            </a>
+        </div>
+        <div class="map-preview">
+            <a href="/images/streets.png" onclick="openInNewTab('/images/streets.png')">
+                <img src="/images/streets-preview.png" alt="Streets">
+                <div class="map-preview-text">STREETS</div>
+            </a>
+        </div>
+        <div class="map-preview">
+            <a href="/images/groundzero.png" onclick="openInNewTab('/images/groundzero.png')">
+                <img src="/images/groundzero-preview.png" alt="Ground Zero">
+                <div class="map-preview-text">GROUND ZERO</div>
+            </a>
+        </div>
+    </div>
+    <footer class="footer">
+        <a>PLACEHOLDER</a>
+        </footer>
+        <script>
+            function openInNewTab(url) {
+                event.preventDefault();
+                var win = window.open(url, '_blank');
+                win.focus();
+            }
+        </script>
+</body>
+</html>

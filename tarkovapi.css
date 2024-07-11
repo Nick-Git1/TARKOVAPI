@@ -11,17 +11,6 @@
     box-sizing: border-box;
 }
 
-body.landing-page {
-    font-family: 'Draftwerk', sans-serif;
-    background: linear-gradient(to bottom, rgba(65, 66, 64, 0.8), rgba(119, 106, 83, 0.8));
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
 body {
     font-family: 'Draftwerk', sans-serif;
     background: linear-gradient(to bottom, rgba(65, 66, 64, 0.8), rgba(119, 106, 83, 0.8));
@@ -163,4 +152,62 @@ a {
     border-radius: 20px;
     text-align: center;
     cursor: default;
+}
+
+.maps-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: auto;
+    gap: 10px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.map-preview img {
+    width: 100%;
+    height: 200px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+    border: 3px solid rgb(65, 66, 64);
+    border-radius: 5px;
+}
+
+
+@keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.map-preview-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #837457;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.904);
+    padding: 10px;
+}
+
+.map-preview-text:hover {
+    text-decoration: underline;
 }
