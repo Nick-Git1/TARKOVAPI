@@ -212,6 +212,7 @@ a {
 
 .trader-preview-text {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 30px;
@@ -219,9 +220,66 @@ a {
     cursor: pointer;
     background-color: rgb(0, 0, 0);
     padding: 5px;
-    padding-bottom: 40px;
 }
 
-.trader-preview-text:hover {
-    text-decoration: underline;
+.trader-reset-time {
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    color:#837457;
+    text-align: center;
+    text-decoration: none;
 }
+
+.trader-preview-text:hover .trader-reset-time {
+    text-decoration: none;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* 10 columns of equal width */
+    gap: 10px; /* Space between items */
+    padding: 10px;
+}
+
+.shop-grid-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.item-card {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    height: 100%;
+}
+
+.item-card:hover {
+    transform: scale(1.05);
+}
+
+.item-card img {
+    width: 100%;
+    height: auto;
+}
+
+.item-info {
+    padding: 10px;
+}
+
+.item-name {
+    font-size: 20px;
+    color: #333;
+}
+
+.item-price {
+    font-size: 18px;
+    color: #666;
+}
+
+

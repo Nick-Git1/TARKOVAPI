@@ -23,62 +23,164 @@
         <div class="trader-portrait">
             <a href="trader-prapor.html">
                 <img src="/images/prapor-portrait.jpg" alt="Prapor">
-                <div class="trader-preview-text">PRAPOR</div>
+                <div class="trader-preview-text">PRAPOR
                 <span class="trader-reset-time" id="reset-time-prapor"></span>
             </a>
+        </div>
         </div>
         <div class="trader-portrait">
             <a href="trader-therapist.html">
                 <img src="/images/therapist-portrait.jpg" alt="Therapist">
-                <div class="trader-preview-text">THERAPIST</div>
+                <div class="trader-preview-text">THERAPIST
                 <span class="trader-reset-time" id="reset-time-therapist"></span>
             </a>
+        </div>
         </div>
         <div class="trader-portrait">
             <a href="trader-skier.html">
                 <img src="/images/skier-portrait.jpg" alt="Skier">
-                <div class="trader-preview-text">SKIER</div>
+                <div class="trader-preview-text">SKIER
                 <span class="trader-reset-time" id="reset-time-skier"></span>
             </a>
+        </div>
         </div>
         <div class="trader-portrait">
             <a href="trader-peacekeeper.html">
                 <img src="/images/peacekeeper-portrait.jpg" alt="Peacekeeper">
-                <div class="trader-preview-text">PEACEKEEPER</div>
+                <div class="trader-preview-text">PEACEKEEPER
                 <span class="trader-reset-time" id="reset-time-peacekeeper"></span>
             </a>
+        </div>
         </div>
         <div class="trader-portrait">
             <a href="trader-mechanic.html">
                 <img src="/images/mechanic-portrait.jpg" alt="Mechanic">
-                <div class="trader-preview-text">MECHANIC</div>
+                <div class="trader-preview-text">MECHANIC
                 <span class="trader-reset-time" id="reset-time-mechanic"></span>
+                </div>
             </a>
         </div>
         <div class="trader-portrait">
             <a href="trader-ragman.html">
                 <img src="/images/ragman-portrait.jpg" alt="Ragman">
-                <div class="trader-preview-text">RAGMAN</div>
+                <div class="trader-preview-text">RAGMAN
                 <span class="trader-reset-time" id="reset-time-ragman"></span>
             </a>
+            </div>
         </div>
         <div class="trader-portrait">
             <a href="trader-jaeger.html">
                 <img src="/images/jaeger-portrait.jpg" alt="Jaeger">
-                <div class="trader-preview-text">JAEGER</div>
+                <div class="trader-preview-text">JAEGER
                 <span class="trader-reset-time" id="reset-time-jaeger"></span>
             </a>
+        </div>
         </div>
         <div class="trader-portrait">
             <a href="trader-ref.html">
                 <img src="/images/ref-portrait.jpg" alt="Ref">
-                <div class="trader-preview-text">REF</div>
+                <div class="trader-preview-text">REF
                 <span class="trader-reset-time" id="reset-time-ref"></span>
             </a>
+        </div>
         </div>
     </div>
     <footer class="footer">
         <a>PLACEHOLDER</a>
     </footer>
+    <script>
+        async function fetchTraderData() {
+  try {
+    const response = await fetch('https://api.tarkov.dev/graphql', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query: `
+          {
+            traders(lang: en) {
+              id
+              name
+              resetTime
+            }
+          }
+        `,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    if (data.errors) {
+      console.error('GraphQL errors:', data.errors);
+      throw new Error('Error in GraphQL query');
+    }
+
+    return data.data.traders;
+  } catch (error) {
+    console.error('Error fetching trader data:', error);
+    throw error;
+  }
+}
+
+function startCountdown(elementId, resetTime) {
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const targetDate = new Date(resetTime).getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) {
+      document.getElementById(elementId).textContent = "00:00:00";
+      return;
+    }
+
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    const paddedHours = String(hours).padStart(2, '0');
+    const paddedMinutes = String(minutes).padStart(2, '0');
+    const paddedSeconds = String(seconds).padStart(2, '0');
+
+    document.getElementById(elementId).textContent = `${paddedHours}:${paddedMinutes}:${paddedSeconds}`;
+  }
+
+  updateCountdown(); 
+  setInterval(updateCountdown, 1000); 
+}
+
+async function displayTraderResetTimes() {
+  try {
+    const traders = await fetchTraderData();
+    console.log('Fetched traders:', traders); //log
+
+    const traderIdMap = {
+      'Prapor': 'reset-time-prapor',
+      'Therapist': 'reset-time-therapist',
+      'Skier': 'reset-time-skier',
+      'Peacekeeper': 'reset-time-peacekeeper',
+      'Mechanic': 'reset-time-mechanic',
+      'Ragman': 'reset-time-ragman',
+      'Jaeger': 'reset-time-jaeger',
+      'Ref': 'reset-time-ref',
+    };
+
+    traders.forEach(trader => {
+      const elementId = traderIdMap[trader.name];
+      if (elementId) {
+        startCountdown(elementId, trader.resetTime);
+      }
+    });
+  } catch (error) {
+    console.error('Error displaying trader reset times:', error);
+  }
+}
+
+displayTraderResetTimes();
+
+    </script>
 </body>
 </html>
